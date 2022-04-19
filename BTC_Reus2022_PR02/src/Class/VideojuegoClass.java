@@ -28,12 +28,6 @@ public class VideojuegoClass implements Entregable_Inter {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-	@Override
-	public boolean compareTo(Object a) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 	
 	//TODO: Todos los Getters and setters menos entregado
 	

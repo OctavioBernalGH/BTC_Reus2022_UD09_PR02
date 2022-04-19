@@ -6,7 +6,7 @@ public interface Entregable_Inter {
 	public abstract boolean devolver(); 			// Will change the state to false
 	public abstract boolean isEntregado(); 			// Will return the actual state
 	// Will compare diferent objects videojuegos: horasEstimadas, series:numTemporadas 
-	public abstract boolean compareTo(Object a); 	
+
 
 													
 

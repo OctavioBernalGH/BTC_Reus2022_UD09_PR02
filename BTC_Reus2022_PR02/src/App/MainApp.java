@@ -25,15 +25,19 @@ public class MainApp {
 		//TODO: Crear un objeto por cada posición usando diferentes constructores
 		
 			//Creating serieClass objects
-			SerieClass dexter 			= new SerieClass();
-			SerieClass sonsOfAnarchy 	= new SerieClass();
+			SerieClass dexter 			= new SerieClass("tetanic", 6, "drama", "paco");
+			System.out.println(dexter);
+			SerieClass sonsOfAnarchy 	= new SerieClass("frodo" , 6, "terror", "jose");
 			SerieClass you 				= new SerieClass();
 			SerieClass theBoys 			= new SerieClass();
 			SerieClass invencible 		= new SerieClass();
 			
 			//Asigning to the array
 			series[0] = dexter;
+			
+
 			series[1] = sonsOfAnarchy;
+			series[0].compareTo(sonsOfAnarchy);
 			series[2] = you;
 			series[3] = theBoys;
 			series[4] = invencible;

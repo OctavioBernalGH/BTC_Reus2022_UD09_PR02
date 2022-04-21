@@ -12,7 +12,7 @@ public class SerieClass implements Entregable_Inter{
 	// Constructor con atributos por defecto.
 	public SerieClass() {}
 	
-	// Constructor con atributos como parámetro y por defecto.
+	// Constructor con atributos como parï¿½metro y por defecto.
 	public SerieClass(String titulo, String creador) {
 		this.titulo = titulo;
 		this.creador = creador;
@@ -60,33 +60,28 @@ public class SerieClass implements Entregable_Inter{
 		this.creador = creador;
 	}
 
-	// Métodos heredados de la interfaz
+	// Mï¿½todos heredados de la interfaz
 	@Override
 	public boolean entregar() {
-		entregado = true; 
-		return entregado;
+		return this.entregado = true;
 	}
-	
 	@Override
 	public boolean devolver() {
-		entregado = false;
-		return entregado;
+		return this.entregado = false;
 	}
 
 	@Override
 	public boolean isEntregado() {
-		return entregado;
+		return this.entregado;
 	}
-
-	// Método para comparar un atributo de objeto tipo SerieClass.
-	public void compareTo(SerieClass a) {
-		if(this.numeroTemporadas > a.getNumeroTemporadas()) {
-			System.out.println(this.titulo + " tiene más temporadas que " + a.getTitulo());
-		} else if (this.numeroTemporadas == a.getNumeroTemporadas()) {
-			System.out.println(this.titulo + " tiene las mismas temporadas que " + a.getTitulo());
-		} else {
-			System.out.println(this.titulo + " tiene menos temporadas que " + a.getTitulo());
+	// Metodo para comparar un atributo de objeto tipo SerieClass y devolvemos el que mas tiene
+	public boolean compareTo(SerieClass a) {
+		boolean flag = false;
+		//Si tiene mas horas pasamos un true
+		if(this.numeroTemporadas > a.numeroTemporadas) {
+			flag = true;
 		}
+		return flag;
 	}
 
 	@Override

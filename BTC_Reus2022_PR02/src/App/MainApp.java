@@ -15,38 +15,38 @@ import Class.VideojuegoClass;
 
 public class MainApp {
 
+			public static SerieClass [] series 				= new SerieClass[5];
+			public static VideojuegoClass [] videojuegos 	= new VideojuegoClass [5];
+			public static VideojuegoClass videojuegoMasH	= new VideojuegoClass("", 0, "", "");
+			public static SerieClass serieMasTemporadas		= new SerieClass("", 0, "", "");	
+
 	public static void main(String[] args) {
 		
-		//TODO: crear dos arrays, uno de series y otro de videojuegos con 5 posiciones cada uno
+		//crear dos arrays, uno de series y otro de videojuegos con 5 posiciones cada uno
 		
-		SerieClass [] series 			= new SerieClass[5];
-		VideojuegoClass [] videojuegos 	= new VideojuegoClass [5];
 		
-		//TODO: Crear un objeto por cada posición usando diferentes constructores
+		
+		//Crear un objeto por cada posición usando diferentes constructores
 		
 			//Creating serieClass objects
-			SerieClass dexter 			= new SerieClass("tetanic", 6, "drama", "paco");
-			System.out.println(dexter);
-			SerieClass sonsOfAnarchy 	= new SerieClass("frodo" , 6, "terror", "jose");
-			SerieClass you 				= new SerieClass();
-			SerieClass theBoys 			= new SerieClass();
+			SerieClass dexter 			= new SerieClass("dexter", 6, "intriga", "antono");
+			SerieClass sonsOfAnarchy 	= new SerieClass("Sons of anarchy" , 6, "thriler", "ana");
+			SerieClass you 				= new SerieClass("You", "pepe");
+			SerieClass theBoys 			= new SerieClass("The boys", "superman");
 			SerieClass invencible 		= new SerieClass();
 			
 			//Asigning to the array
 			series[0] = dexter;
-			
-
 			series[1] = sonsOfAnarchy;
-			series[0].compareTo(sonsOfAnarchy);
 			series[2] = you;
 			series[3] = theBoys;
 			series[4] = invencible;
 			
 			//Creating VideojuegoClass objects
-			VideojuegoClass lol			= new VideojuegoClass();
-			VideojuegoClass moo			= new VideojuegoClass();
-			VideojuegoClass sims		= new VideojuegoClass();
-			VideojuegoClass simCity		= new VideojuegoClass();
+			VideojuegoClass lol			= new VideojuegoClass("lol", 400);
+			VideojuegoClass moo			= new VideojuegoClass("Master of orion 2", 2000);
+			VideojuegoClass sims		= new VideojuegoClass("Sims", 0, "Muy malo", "no lo quiero saber");
+			VideojuegoClass simCity		= new VideojuegoClass("Sim city", 400, "Estrategia", "Cocacola");
 			VideojuegoClass mGT			= new VideojuegoClass();
 			
 			//Asigning to the array
@@ -56,7 +56,7 @@ public class MainApp {
 			videojuegos[3] = simCity;
 			videojuegos[4] = mGT;
 		
-		//TODO: Entregar algunos videojuegos y series con el método entregar();
+		//Entregar algunos videojuegos y series con el método entregar();
 			
 			series[0]		.entregar();
 			videojuegos[1]	.entregar();
@@ -64,15 +64,11 @@ public class MainApp {
 			videojuegos[3]	.entregar();
 			series[4]		.entregar();
 		
-		//TODO: Contar cuantos videojuegos y series hay entregados y devolverlos
+		//Contar cuantos videojuegos y series hay entregados y devolverlos
 			contarYEntregarVideojuegos(videojuegos);
 			contarYEntregarSeries(series);
-		
-		/*TODO: Mostrar por pantalla con el método toString() el videojuego con mas horasEstimadas 
-		 *  y la serie con más numTemp usando el método toString();
-		 */
-			
-
+			videojuegoMasHoras();
+			serieMasTemporadas();
 	}
 //Methods
 	//Contando y entregando Videojuegos
@@ -100,5 +96,26 @@ public class MainApp {
 		}
 		System.out.println("Habia "+contSeries+" series entregadas");
 	}
+	/*Mostrar por pantalla con el método toString() el videojuego con mas horasEstimadas 
+	 *  y la serie con más numTemp usando el método toString();
+	 */
+	private static void videojuegoMasHoras() {
+			for(VideojuegoClass target: videojuegos) {
+				if(target.compareTo(videojuegoMasH)) {
+					videojuegoMasH = target;
+				}
+			}
+			System.out.println("Videojuego con mas horas");
+			System.out.println(videojuegoMasH.toString());
+	}
+	private static void serieMasTemporadas() {
+		for(SerieClass target: series) {
+			if(target.compareTo(serieMasTemporadas)) {
+				serieMasTemporadas = target;
+			}
+		}
+		System.out.println("Serie con mas temporadas");
+		System.out.println(serieMasTemporadas.toString());
+}
 
 }
